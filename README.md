@@ -466,7 +466,7 @@ All accept `NFloat` or plain numpy arrays.
 
 ## References
 ```bibtex
-@misc{chen2026automatednumericalstabilityanalysis,
+@misc{chen2026autos,
       title={Automated Numerical Stability Analysis of Deep Learning Operators}, 
       author={Xinye Chen},
       year={2026},
