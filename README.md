@@ -464,7 +464,20 @@ All accept `NFloat` or plain numpy arrays.
 
 ---
 
+## References
+```bibtex
+@misc{chen2026automatednumericalstabilityanalysis,
+      title={Automated Numerical Stability Analysis of Deep Learning Operators}, 
+      author={Xinye Chen},
+      year={2026},
+      eprint={2607.25494},
+      archivePrefix={arXiv},
+      primaryClass={math.NA},
+      url={https://arxiv.org/abs/2607.25494}, 
+}
+```
 ---
+
 
 ## License
 
