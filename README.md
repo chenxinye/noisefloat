@@ -1,7 +1,6 @@
 # noisefloat
 
-**NFloat/CESTAC-style stochastic arithmetic for Python** with native NumPy,
-PyTorch, JAX, and TensorFlow backends.
+** Stochastic arithmetic for Python** with native NumPy, PyTorch, JAX, and TensorFlow backends.
 
 ---
 
