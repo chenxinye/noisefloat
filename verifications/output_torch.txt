@@ -1,0 +1,659 @@
+================================================================================
+Example 1: Polynomial function of two variables: Rump equation
+Precision: single
+Backend: torch on cuda
+--------------------------------------------------------------------------------
+res=@.0
+res=8.024690945943E-01  digits=6.370
+--------------------------------------------------------------------------------
+Noisefloat detected source(s):
+There are 1 numerical instabilities
+1 LOSS(ES) OF ACCURACY DUE TO CANCELLATION(S)
+
+CADNA C reference:
+There are 1 numerical instabilities
+1 LOSS(ES) OF ACCURACY DUE TO CANCELLATION(S)
+Comparison by source:
+  LOSS(ES) OF ACCURACY DUE TO CANCELLATION(S): noisefloat=1, reference=1
+Reference source: rump_cad.cc / output_float.txt
+
+Runtime (mean seconds): deterministic_single=3.515220e-04, noisefloat=2.704458e-02, overhead=76.936x
+
+================================================================================
+Example 2: Second-order equation
+Precision: single
+Backend: torch on cuda
+--------------------------------------------------------------------------------
+d = @.0
+Discriminant is zero. The float solution is 3.500000317891E+00  digits=6.588
+--------------------------------------------------------------------------------
+Noisefloat detected source(s):
+There are 1 numerical instabilities
+1 LOSS(ES) OF ACCURACY DUE TO CANCELLATION(S)
+
+CADNA C reference:
+There are 1 numerical instabilities
+1 LOSS(ES) OF ACCURACY DUE TO CANCELLATION(S)
+Comparison by source:
+  LOSS(ES) OF ACCURACY DUE TO CANCELLATION(S): noisefloat=1, reference=1
+Reference source: ex2_cad.cc / output_float.txt
+
+Runtime (mean seconds): deterministic_single=5.901023e-03, noisefloat=1.047937e-02, overhead=1.776x
+
+================================================================================
+Example 3: Determinant of Hilbert's matrix
+Precision: single
+Backend: torch on cuda
+--------------------------------------------------------------------------------
+Pivot number  1 = 1.000000039736E+00  digits=6.466
+Pivot number  2 = 8.333325137695E-02  digits=5.611
+Pivot number  3 = 5.555567486833E-03  digits=4.708
+Pivot number  4 = 3.572066101090E-04  digits=3.656
+Pivot number  5 = 2.269889409945E-05  digits=2.008
+Pivot number  6 = 1.311535053598E-06  digits=0.732
+Pivot number  7 = @.0
+Pivot number  8 = @.0
+Pivot number  9 = @.0
+Pivot number 10 = @.0
+Pivot number 11 = @.0
+Determinant = 0.000000000000E+00  digits=15.000
+--------------------------------------------------------------------------------
+Noisefloat detected source(s):
+There are 48 numerical instabilities
+4 UNSTABLE DIVISION(S)
+44 UNSTABLE MULTIPLICATION(S)
+
+CADNA C reference:
+There are 48 numerical instabilities
+4 UNSTABLE DIVISION(S)
+44 UNSTABLE MULTIPLICATION(S)
+Comparison by source:
+  UNSTABLE DIVISION(S): noisefloat=4, reference=4
+  UNSTABLE MULTIPLICATION(S): noisefloat=44, reference=44
+Reference source: hilbert_cad.cc / output_float.txt
+
+Runtime (mean seconds): deterministic_single=7.840321e-03, noisefloat=1.000234e+00, overhead=127.576x
+
+================================================================================
+Example 4: J.-M. Muller recurrence
+Precision: single
+Backend: torch on cuda
+--------------------------------------------------------------------------------
+U( 3) = 5.590156714122E+00  digits=5.497
+U( 4) = 5.633282820384E+00  digits=4.228
+U( 5) = 5.672014713287E+00  digits=2.984
+U( 6) = 5.666905879974E+00  digits=1.738
+U( 7) = @.0
+U( 8) = @.0
+U( 9) = @.0
+U(10) = 1.094968694051E+02  digits=0.511
+U(11) = 1.004545364380E+02  digits=1.812
+U(12) = 1.000263722738E+02  digits=3.047
+U(13) = 1.000015462240E+02  digits=4.279
+U(14) = 1.000000991821E+02  digits=5.506
+U(15) = 1.000000127157E+02  digits=6.961
+U(16) = 1.000000076294E+02  digits=6.722
+U(17) = 9.999999745687E+01  digits=6.961
+U(18) = 1.000000050863E+02  digits=6.961
+U(19) = 1.000000025431E+02  digits=6.538
+U(20) = 1.000000000000E+02  digits=15.000
+U(21) = 1.000000076294E+02  digits=6.722
+U(22) = 1.000000000000E+02  digits=15.000
+U(23) = 1.000000050863E+02  digits=6.538
+U(24) = 9.999999745687E+01  digits=6.961
+U(25) = 1.000000025431E+02  digits=6.538
+U(26) = 1.000000050863E+02  digits=6.538
+U(27) = 1.000000050863E+02  digits=6.961
+U(28) = 1.000000076294E+02  digits=15.000
+U(29) = 1.000000076294E+02  digits=6.722
+U(30) = 1.000000076294E+02  digits=15.000
+The true limit is 6.
+--------------------------------------------------------------------------------
+Noisefloat detected source(s):
+There are 10 numerical instabilities
+8 UNSTABLE DIVISION(S)
+2 UNSTABLE MULTIPLICATION(S)
+
+CADNA C reference:
+There are 7 numerical instabilities
+5 UNSTABLE DIVISION(S)
+2 UNSTABLE MULTIPLICATION(S)
+Comparison by source:
+  UNSTABLE DIVISION(S): noisefloat=8, reference=5
+  UNSTABLE MULTIPLICATION(S): noisefloat=2, reference=2
+Reference source: muller_cad.cc / output_float.txt
+
+Runtime (mean seconds): deterministic_single=2.592189e-03, noisefloat=2.238452e-01, overhead=86.354x
+
+================================================================================
+Example 5: Newton's method
+Precision: single
+Backend: torch on cuda
+--------------------------------------------------------------------------------
+x(  1) = 4.648648103078E-01  digits=5.908, diff = 3.513520707687E-02  digits=4.941
+x(  2) = 4.468711912632E-01  digits=5.936, diff = 1.799361904462E-02  digits=5.067
+x(  3) = 4.377612968286E-01  digits=5.410, diff = 9.109895055493E-03  digits=3.771
+x(  4) = 4.331762095292E-01  digits=5.357, diff = 4.585087920229E-03  digits=4.093
+x(  5) = 4.308789869150E-01  digits=4.711, diff = 2.297222614288E-03  digits=2.475
+x(  6) = 4.297263324261E-01  digits=4.722, diff = 1.152654256051E-03  digits=2.325
+x(  7) = 4.291417400042E-01  digits=4.631, diff = 5.845923830445E-04  digits=1.520
+x(  8) = 4.288619856040E-01  digits=4.197, diff = 2.797543614482E-04  digits=0.875
+x(  9) = 4.287235538165E-01  digits=4.243, diff = 1.384317874908E-04  digits=0.563
+x( 10) = 4.286331931750E-01  digits=3.089, diff = @.0
+x( 11) = 4.286678830783E-01  digits=3.291, diff = @.0
+x( 12) = 4.291878938675E-01  digits=2.257, diff = @.0
+x( 13) = 4.288162390391E-01  digits=2.504, diff = @.0
+x( 14) = 4.284093081951E-01  digits=2.417, diff = @.0
+x( 15) = 4.284934699535E-01  digits=2.710, diff = @.0
+x( 16) = 4.286355475585E-01  digits=2.826, diff = @.0
+x( 17) = 4.285528461138E-01  digits=3.052, diff = @.0
+x( 18) = 4.285893142223E-01  digits=3.410, diff = @.0
+x( 19) = 4.286103745302E-01  digits=3.312, diff = @.0
+x( 20) = 4.288898607095E-01  digits=2.680, diff = @.0
+x( 21) = 4.287706613541E-01  digits=3.100, diff = @.0
+x( 22) = 4.286430478096E-01  digits=3.173, diff = @.0
+x( 23) = 4.288384914398E-01  digits=2.869, diff = @.0
+x( 24) = 4.286626279354E-01  digits=3.000, diff = @.0
+x( 25) = 4.286218484243E-01  digits=3.322, diff = @.0
+x( 26) = 4.291267991066E-01  digits=2.417, diff = @.0
+x( 27) = 4.287691613038E-01  digits=2.618, diff = @.0
+x( 28) = 4.286478658517E-01  digits=2.908, diff = @.0
+x( 29) = 4.285591642062E-01  digits=3.142, diff = @.0
+x( 30) = 4.287594060103E-01  digits=2.726, diff = @.0
+x( 31) = 4.287377993266E-01  digits=2.982, diff = @.0
+x( 32) = 4.286695023378E-01  digits=3.851, diff = @.0
+x( 33) = 4.286221563816E-01  digits=3.617, diff = @.0
+x( 34) = 4.283292690913E-01  digits=2.510, diff = @.0
+x( 35) = 4.284388720989E-01  digits=2.825, diff = @.0
+x( 36) = 4.285314579805E-01  digits=3.172, diff = @.0
+x( 37) = 4.287196099758E-01  digits=2.628, diff = @.0
+x( 38) = 4.285837610563E-01  digits=2.787, diff = @.0
+x( 39) = 4.285780787468E-01  digits=2.908, diff = @.0
+x( 40) = 4.285597503185E-01  digits=3.040, diff = @.0
+x( 41) = 4.284576376279E-01  digits=2.853, diff = @.0
+x( 42) = 4.285285671552E-01  digits=3.056, diff = @.0
+x( 43) = 4.286376237869E-01  digits=3.045, diff = @.0
+x( 44) = 4.285940527916E-01  digits=3.594, diff = @.0
+x( 45) = 4.286680022875E-01  digits=2.872, diff = @.0
+x( 46) = 4.286511739095E-01  digits=2.760, diff = @.0
+x( 47) = 4.286122123400E-01  digits=3.073, diff = @.0
+x( 48) = 4.285448193550E-01  digits=3.049, diff = @.0
+x( 49) = 4.285454154015E-01  digits=3.496, diff = @.0
+x( 50) = 4.285986324151E-01  digits=2.843, diff = @.0
+x( 51) = 4.286931852500E-01  digits=2.978, diff = @.0
+x( 52) = 4.286894500256E-01  digits=3.306, diff = @.0
+x( 53) = 4.286513825258E-01  digits=3.273, diff = @.0
+x( 54) = 4.285430709521E-01  digits=3.028, diff = @.0
+x( 55) = 4.280763566494E-01  digits=2.418, diff = @.0
+x( 56) = 4.284014701843E-01  digits=2.608, diff = @.0
+x( 57) = 4.284769296646E-01  digits=2.809, diff = @.0
+x( 58) = 4.285118977229E-01  digits=2.933, diff = @.0
+x( 59) = 4.285569290320E-01  digits=4.018, diff = 1.758237873825E-04  digits=0.571
+x( 60) = 4.282695949078E-01  digits=2.417, diff = @.0
+x( 61) = 4.285218914350E-01  digits=2.616, diff = @.0
+x( 62) = 4.285080532233E-01  digits=2.950, diff = @.0
+x( 63) = 4.283049305280E-01  digits=2.731, diff = @.0
+x( 64) = 4.284047683080E-01  digits=2.991, diff = @.0
+x( 65) = 4.282879630725E-01  digits=2.764, diff = @.0
+x( 66) = 4.284936587016E-01  digits=2.848, diff = @.0
+x( 67) = 4.286096294721E-01  digits=3.043, diff = @.0
+x( 68) = 4.286310970783E-01  digits=3.063, diff = @.0
+x( 69) = 4.286065002282E-01  digits=3.018, diff = @.0
+x( 70) = 4.285139739513E-01  digits=3.039, diff = @.0
+x( 71) = 4.285560250282E-01  digits=3.280, diff = @.0
+x( 72) = 4.286671678225E-01  digits=3.310, diff = @.0
+x( 73) = 4.303720196088E-01  digits=1.755, diff = @.0
+x( 74) = 4.296272397041E-01  digits=2.091, diff = @.0
+x( 75) = 4.290925264359E-01  digits=2.390, diff = @.0
+x( 76) = 4.286249577999E-01  digits=2.453, diff = @.0
+x( 77) = 4.285195569197E-01  digits=2.751, diff = @.0
+x( 78) = 4.285316467285E-01  digits=3.021, diff = @.0
+x( 79) = 4.286543230216E-01  digits=3.089, diff = @.0
+x( 80) = 4.286370774110E-01  digits=3.157, diff = @.0
+x( 81) = 4.286247889201E-01  digits=3.538, diff = @.0
+x( 82) = 4.286418358485E-01  digits=3.368, diff = @.0
+x( 83) = 4.285975793997E-01  digits=3.672, diff = @.0
+x( 84) = 4.307060837746E-01  digits=1.642, diff = @.0
+x( 85) = 4.296600421270E-01  digits=1.945, diff = @.0
+x( 86) = 4.290603299936E-01  digits=2.225, diff = @.0
+x( 87) = 4.288199941317E-01  digits=2.520, diff = @.0
+x( 88) = 4.285978178183E-01  digits=2.708, diff = @.0
+x( 89) = 4.285433789094E-01  digits=2.992, diff = @.0
+x( 90) = 4.285435875257E-01  digits=3.523, diff = @.0
+x( 91) = 4.284100333850E-01  digits=3.563, diff = @.0
+x( 92) = 4.284800688426E-01  digits=3.247, diff = @.0
+x( 93) = 4.281951884429E-01  digits=2.476, diff = @.0
+x( 94) = 4.283720950286E-01  digits=2.803, diff = @.0
+x( 95) = 4.299312134584E-01  digits=1.838, diff = @.0
+x( 96) = 4.293223420779E-01  digits=2.158, diff = @.0
+x( 97) = 4.289632737637E-01  digits=2.464, diff = @.0
+x( 98) = 4.284908870856E-01  digits=2.461, diff = @.0
+x( 99) = 4.285322229067E-01  digits=2.739, diff = @.0
+x(100) = 4.285869598389E-01  digits=3.092, diff = @.0
+--------------------------------------------------------------------------------
+Noisefloat detected source(s):
+There are 342 numerical instabilities
+94 LOSS(ES) OF ACCURACY DUE TO CANCELLATION(S)
+68 UNSTABLE INTRINSIC FUNCTION(S)
+90 UNSTABLE BRANCHING(S)
+90 UNSTABLE DIVISION(S)
+
+CADNA C reference:
+There are 336 numerical instabilities
+91 UNSTABLE DIVISION(S)
+89 UNSTABLE BRANCHING(S)
+60 UNSTABLE INTRINSIC FUNCTION(S)
+96 LOSS(ES) OF ACCURACY DUE TO CANCELLATION(S)
+Comparison by source:
+  UNSTABLE DIVISION(S): noisefloat=90, reference=91
+  UNSTABLE BRANCHING(S): noisefloat=90, reference=89
+  UNSTABLE INTRINSIC FUNCTION(S): noisefloat=68, reference=60
+  LOSS(ES) OF ACCURACY DUE TO CANCELLATION(S): noisefloat=94, reference=96
+Reference source: newton_cad.cc / output_float.txt
+
+Runtime (mean seconds): deterministic_single=3.692140e-03, noisefloat=2.483169e+00, overhead=672.555x
+
+================================================================================
+Example 6: Gaussian elimination with partial pivoting
+Precision: single
+Backend: torch on cuda
+--------------------------------------------------------------------------------
+ll=0
+ll=1
+ll=3
+x_sol(1) = 9.984876910845E-01  digits=2.249  (true value: 1.0000000E+00)
+x_sol(2) = 1.000244120757E+00  digits=3.041  (true value: 1.0000000E+00)
+x_sol(3) = 9.999997570750E-09  digits=6.196  (true value: 1.0000000E-08)
+x_sol(4) = 1.000000019868E+00  digits=6.284  (true value: 1.0000000E+00)
+--------------------------------------------------------------------------------
+Noisefloat detected source(s):
+There are 1 numerical instabilities
+1 LOSS(ES) OF ACCURACY DUE TO CANCELLATION(S)
+
+CADNA C reference:
+There are 2 numerical instabilities
+1 UNSTABLE BRANCHING(S)
+1 LOSS(ES) OF ACCURACY DUE TO CANCELLATION(S)
+Comparison by source:
+  UNSTABLE BRANCHING(S): noisefloat=0, reference=1
+  LOSS(ES) OF ACCURACY DUE TO CANCELLATION(S): noisefloat=1, reference=1
+Reference source: gauss_cad.cc / output_float.txt
+
+Runtime (mean seconds): deterministic_single=9.217953e-04, noisefloat=8.461356e-02, overhead=91.792x
+
+================================================================================
+Example 7: Jacobi iterative method
+Precision: single
+Backend: torch on cuda
+--------------------------------------------------------------------------------
+niter = 38  (verification cap: 1000)
+x_sol( 1) = 1.699587066968E+00  digits=3.130  (true value: 1.7000000E+00), residue( 1) = @.0
+x_sol( 2) = -4.746890625000E+03  digits=6.036  (true value: -4.7468900E+03), residue( 2) = @.0
+x_sol( 3) = 5.022868601481E+01  digits=4.234  (true value: 5.0230000E+01), residue( 3) = -4.557291201005E-03  digits=0.813
+x_sol( 4) = -2.453198293050E+02  digits=4.917  (true value: -2.4532000E+02), residue( 4) = @.0
+x_sol( 5) = 4.778289876302E+03  digits=5.976  (true value: 4.7782900E+03), residue( 5) = @.0
+x_sol( 6) = -7.573079935710E+01  digits=4.318  (true value: -7.5730000E+01), residue( 6) = @.0
+x_sol( 7) = 3.495429606120E+03  digits=6.154  (true value: 3.4954300E+03), residue( 7) = @.0
+x_sol( 8) = 4.350034872691E+00  digits=3.653  (true value: 4.3500000E+00), residue( 8) = @.0
+x_sol( 9) = 4.529801025391E+02  digits=5.730  (true value: 4.5298000E+02), residue( 9) = @.0
+x_sol(10) = -2.759741226832E+00  digits=4.003  (true value: -2.7600000E+00), residue(10) = @.0
+x_sol(11) = 8.239242513021E+03  digits=5.698  (true value: 8.2392400E+03), residue(11) = @.0
+x_sol(12) = 3.460440635681E+00  digits=3.324  (true value: 3.4600000E+00), residue(12) = @.0
+x_sol(13) = 9.999984944661E+02  digits=5.309  (true value: 1.0000000E+03), residue(13) = @.0
+x_sol(14) = -5.000345389048E+00  digits=3.307  (true value: -5.0000000E+00), residue(14) = @.0
+x_sol(15) = 3.642400472005E+03  digits=6.716  (true value: 3.6424000E+03), residue(15) = @.0
+x_sol(16) = 7.353595784505E+02  digits=5.404  (true value: 7.3536000E+02), residue(16) = @.0
+x_sol(17) = 1.701234459877E+00  digits=3.115  (true value: 1.7000000E+00), residue(17) = @.0
+x_sol(18) = -2.349168538411E+03  digits=6.225  (true value: -2.3491700E+03), residue(18) = @.0
+x_sol(19) = -8.247520833333E+03  digits=5.953  (true value: -8.2475200E+03), residue(19) = @.0
+x_sol(20) = 9.843568684896E+03  digits=6.546  (true value: 9.8435700E+03), residue(20) = @.0
+--------------------------------------------------------------------------------
+Noisefloat detected source(s):
+There are 318 numerical instabilities
+318 LOSS(ES) OF ACCURACY DUE TO CANCELLATION(S)
+
+CADNA C reference:
+There are 376 numerical instabilities
+111 UNSTABLE BRANCHING(S)
+35 UNSTABLE INTRINSIC FUNCTION(S)
+230 LOSS(ES) OF ACCURACY DUE TO CANCELLATION(S)
+Comparison by source:
+  UNSTABLE BRANCHING(S): noisefloat=0, reference=111
+  UNSTABLE INTRINSIC FUNCTION(S): noisefloat=0, reference=35
+  LOSS(ES) OF ACCURACY DUE TO CANCELLATION(S): noisefloat=318, reference=230
+Reference source: jacobi_cad.cc / output_float.txt
+
+Runtime (mean seconds): deterministic_single=2.419113e-01, noisefloat=3.581087e+01, overhead=148.033x
+
+================================================================================
+Example 1: Polynomial function of two variables: Rump equation
+Precision: double
+Backend: torch on cuda
+--------------------------------------------------------------------------------
+res=@.0
+res=8.024691358025E-01  digits=14.999
+--------------------------------------------------------------------------------
+Noisefloat detected source(s):
+There are 2 numerical instabilities
+2 LOSS(ES) OF ACCURACY DUE TO CANCELLATION(S)
+
+CADNA C reference:
+There are 2 numerical instabilities
+2 LOSS(ES) OF ACCURACY DUE TO CANCELLATION(S)
+Comparison by source:
+  LOSS(ES) OF ACCURACY DUE TO CANCELLATION(S): noisefloat=2, reference=2
+Reference source: rump_cad.cc / output.txt
+
+Runtime (mean seconds): deterministic_double=3.489500e-04, noisefloat=2.878939e-02, overhead=82.503x
+
+================================================================================
+Example 2: Second-order equation
+Precision: double
+Backend: torch on cuda
+--------------------------------------------------------------------------------
+d = @.0
+Discriminant is zero. The double solution is 3.500000000000E+00  digits=15.000
+--------------------------------------------------------------------------------
+Noisefloat detected source(s):
+There are 1 numerical instabilities
+1 LOSS(ES) OF ACCURACY DUE TO CANCELLATION(S)
+
+CADNA C reference:
+There are 1 numerical instabilities
+1 LOSS(ES) OF ACCURACY DUE TO CANCELLATION(S)
+Comparison by source:
+  LOSS(ES) OF ACCURACY DUE TO CANCELLATION(S): noisefloat=1, reference=1
+Reference source: ex2_cad.cc / output.txt
+
+Runtime (mean seconds): deterministic_double=3.804530e-04, noisefloat=1.109348e-02, overhead=29.159x
+
+================================================================================
+Example 3: Determinant of Hilbert's matrix
+Precision: double
+Backend: torch on cuda
+--------------------------------------------------------------------------------
+Pivot number  1 = 1.000000000000E+00  digits=15.000
+Pivot number  2 = 8.333333333333E-02  digits=14.327
+Pivot number  3 = 5.555555555556E-03  digits=13.326
+Pivot number  4 = 3.571428571430E-04  digits=12.241
+Pivot number  5 = 2.267573696156E-05  digits=10.835
+Pivot number  6 = 1.431549050324E-06  digits=9.945
+Pivot number  7 = 9.009749194306E-08  digits=7.850
+Pivot number  8 = 5.659969440428E-09  digits=6.482
+Pivot number  9 = 3.551336134314E-10  digits=5.401
+Pivot number 10 = 2.226225449025E-11  digits=3.788
+Pivot number 11 = 1.393019586208E-12  digits=2.421
+Determinant = 3.014399604361E-65  digits=2.403
+--------------------------------------------------------------------------------
+Noisefloat detected source(s):
+There are 0 numerical instabilities
+
+CADNA C reference:
+No instability detected
+Comparison by source:
+Reference source: hilbert_cad.cc / output.txt
+
+Runtime (mean seconds): deterministic_double=7.774375e-03, noisefloat=9.971624e-01, overhead=128.263x
+
+================================================================================
+Example 4: J.-M. Muller recurrence
+Precision: double
+Backend: torch on cuda
+--------------------------------------------------------------------------------
+U( 3) = 5.590163934426E+00  digits=14.031
+U( 4) = 5.633431085044E+00  digits=12.772
+U( 5) = 5.674648620513E+00  digits=11.528
+U( 6) = 5.713329052427E+00  digits=10.286
+U( 7) = 5.749120920523E+00  digits=9.046
+U( 8) = 5.781810934757E+00  digits=7.808
+U( 9) = 5.811314485054E+00  digits=6.572
+U(10) = 5.837660793970E+00  digits=5.339
+U(11) = 5.861024221981E+00  digits=4.107
+U(12) = 5.882617269021E+00  digits=2.876
+U(13) = 5.920210788099E+00  digits=1.649
+U(14) = @.0
+U(15) = @.0
+U(16) = @.0
+U(17) = 9.946966045755E+01  digits=1.121
+U(18) = 9.996463066119E+01  digits=2.350
+U(19) = 9.999787965672E+01  digits=3.575
+U(20) = 9.999987350657E+01  digits=4.799
+U(21) = 9.999999244901E+01  digits=6.024
+U(22) = 9.999999954888E+01  digits=7.247
+U(23) = 9.999999997303E+01  digits=8.471
+U(24) = 9.999999999839E+01  digits=9.694
+U(25) = 9.999999999990E+01  digits=10.917
+U(26) = 9.999999999999E+01  digits=12.140
+U(27) = 1.000000000000E+02  digits=13.365
+U(28) = 1.000000000000E+02  digits=14.618
+U(29) = 1.000000000000E+02  digits=15.000
+U(30) = 1.000000000000E+02  digits=15.000
+The true limit is 6.
+--------------------------------------------------------------------------------
+Noisefloat detected source(s):
+There are 9 numerical instabilities
+7 UNSTABLE DIVISION(S)
+2 UNSTABLE MULTIPLICATION(S)
+
+CADNA C reference:
+There are 8 numerical instabilities
+6 UNSTABLE DIVISION(S)
+2 UNSTABLE MULTIPLICATION(S)
+Comparison by source:
+  UNSTABLE DIVISION(S): noisefloat=7, reference=6
+  UNSTABLE MULTIPLICATION(S): noisefloat=2, reference=2
+Reference source: muller_cad.cc / output.txt
+
+Runtime (mean seconds): deterministic_double=2.563023e-03, noisefloat=2.229643e-01, overhead=86.993x
+
+================================================================================
+Example 5: Newton's method
+Precision: double
+Backend: torch on cuda
+--------------------------------------------------------------------------------
+x(  1) = 4.648648648649E-01  digits=14.341, diff = 3.513513513514E-02  digits=13.294
+x(  2) = 4.468713340054E-01  digits=14.459, diff = 1.799353085948E-02  digits=13.283
+x(  3) = 4.377608226178E-01  digits=13.910, diff = 9.110511387603E-03  digits=12.180
+x(  4) = 4.331761355608E-01  digits=13.733, diff = 4.584687057005E-03  digits=12.243
+x(  5) = 4.308763036958E-01  digits=13.167, diff = 2.299831864983E-03  digits=10.912
+x(  6) = 4.297244989612E-01  digits=13.480, diff = 1.151804734600E-03  digits=10.762
+x(  7) = 4.291481222775E-01  digits=12.934, diff = 5.763766837053E-04  digits=9.969
+x(  8) = 4.288598150904E-01  digits=12.984, diff = 2.883071870435E-04  digits=9.487
+x(  9) = 4.287156317522E-01  digits=13.575, diff = 1.441833382529E-04  digits=9.416
+x( 10) = 4.286435326428E-01  digits=11.584, diff = 7.209910942909E-05  digits=7.808
+x( 11) = 4.286074812274E-01  digits=11.470, diff = 3.605141531423E-05  digits=7.839
+x( 12) = 4.285894550549E-01  digits=11.803, diff = 1.802617256006E-05  digits=7.326
+x( 13) = 4.285804418514E-01  digits=11.273, diff = 9.013203478255E-06  digits=6.503
+x( 14) = 4.285759352207E-01  digits=10.843, diff = 4.506630689164E-06  digits=6.059
+x( 15) = 4.285736818998E-01  digits=10.501, diff = 2.253320963393E-06  digits=5.326
+x( 16) = 4.285725552313E-01  digits=10.181, diff = 1.126668456512E-06  digits=4.843
+x( 17) = 4.285719918945E-01  digits=9.889, diff = 5.633368288146E-07  digits=3.853
+x( 18) = 4.285717102438E-01  digits=9.622, diff = 2.816506436779E-07  digits=3.265
+x( 19) = 4.285715694426E-01  digits=10.065, diff = 1.408012467915E-07  digits=3.201
+x( 20) = 4.285714989262E-01  digits=8.747, diff = 7.051641592870E-08  digits=1.946
+x( 21) = 4.285714639577E-01  digits=8.496, diff = 3.496841595914E-08  digits=1.681
+x( 22) = 4.285714464695E-01  digits=8.365, diff = 1.748829784691E-08  digits=1.370
+x( 23) = 4.285714367001E-01  digits=7.664, diff = @.0
+x( 24) = 4.285714336763E-01  digits=7.551, diff = @.0
+x( 25) = 4.285714407441E-01  digits=7.186, diff = @.0
+x( 26) = 4.285714373025E-01  digits=7.935, diff = @.0
+x( 27) = 4.285714281195E-01  digits=7.685, diff = @.0
+x( 28) = 4.285714445257E-01  digits=6.753, diff = @.0
+x( 29) = 4.285714116695E-01  digits=6.589, diff = @.0
+x( 30) = 4.285714205486E-01  digits=6.882, diff = @.0
+x( 31) = 4.285714250235E-01  digits=7.186, diff = @.0
+x( 32) = 4.285714241370E-01  digits=7.587, diff = @.0
+x( 33) = 4.285714954415E-01  digits=6.147, diff = @.0
+x( 34) = 4.285714595753E-01  digits=6.430, diff = @.0
+x( 35) = 4.285714445307E-01  digits=6.732, diff = @.0
+x( 36) = 4.285714333286E-01  digits=6.968, diff = @.0
+x( 37) = 4.285714277945E-01  digits=7.164, diff = @.0
+x( 38) = 4.285714268519E-01  digits=7.193, diff = @.0
+x( 39) = 4.285714248351E-01  digits=7.120, diff = @.0
+x( 40) = 4.285714260216E-01  digits=7.196, diff = @.0
+x( 41) = 4.285714261431E-01  digits=7.171, diff = @.0
+x( 42) = 4.285714258292E-01  digits=7.352, diff = @.0
+x( 43) = 4.285714211023E-01  digits=7.639, diff = @.0
+x( 44) = 4.285714245442E-01  digits=7.977, diff = @.0
+x( 45) = 4.285714224813E-01  digits=7.340, diff = @.0
+x( 46) = 4.285714460883E-01  digits=6.543, diff = @.0
+x( 47) = 4.285714377496E-01  digits=6.845, diff = @.0
+x( 48) = 4.285714415832E-01  digits=6.979, diff = @.0
+x( 49) = 4.285714338069E-01  digits=7.223, diff = @.0
+x( 50) = 4.285714297258E-01  digits=7.424, diff = @.0
+x( 51) = 4.285714292136E-01  digits=7.628, diff = @.0
+x( 52) = 4.285714393136E-01  digits=7.711, diff = @.0
+x( 53) = 4.285714346929E-01  digits=7.501, diff = @.0
+x( 54) = 4.285714458969E-01  digits=6.878, diff = @.0
+x( 55) = 4.285715207996E-01  digits=6.087, diff = @.0
+x( 56) = 4.285714789702E-01  digits=6.413, diff = @.0
+x( 57) = 4.285714564108E-01  digits=6.739, diff = @.0
+x( 58) = 4.285714447722E-01  digits=7.074, diff = @.0
+x( 59) = 4.285714339296E-01  digits=7.337, diff = @.0
+x( 60) = 4.285714381128E-01  digits=7.175, diff = @.0
+x( 61) = 4.285714238433E-01  digits=6.945, diff = @.0
+x( 62) = 4.285714278750E-01  digits=7.246, diff = @.0
+x( 63) = 4.285714243339E-01  digits=7.086, diff = @.0
+x( 64) = 4.285714261189E-01  digits=7.179, diff = @.0
+x( 65) = 4.285714267512E-01  digits=7.371, diff = @.0
+x( 66) = 4.285714269940E-01  digits=7.584, diff = @.0
+x( 67) = 4.285714353507E-01  digits=7.461, diff = @.0
+x( 68) = 4.285714400375E-01  digits=7.507, diff = @.0
+x( 69) = 4.285714377703E-01  digits=8.146, diff = @.0
+x( 70) = 4.285714356425E-01  digits=7.529, diff = @.0
+x( 71) = 4.285714337076E-01  digits=7.838, diff = @.0
+x( 72) = 4.285714318913E-01  digits=7.782, diff = @.0
+x( 73) = 4.285714257513E-01  digits=7.145, diff = @.0
+x( 74) = 4.285714296853E-01  digits=7.371, diff = @.0
+x( 75) = 4.285714338363E-01  digits=8.090, diff = @.0
+x( 76) = 4.285714269712E-01  digits=8.042, diff = 6.865151410314E-09  digits=0.799
+x( 77) = 4.285714963452E-01  digits=6.280, diff = @.0
+x( 78) = 4.285714620234E-01  digits=6.574, diff = @.0
+x( 79) = 4.285714447907E-01  digits=6.848, diff = @.0
+x( 80) = 4.285714349460E-01  digits=7.052, diff = @.0
+x( 81) = 4.285714323877E-01  digits=7.282, diff = @.0
+x( 82) = 4.285714289215E-01  digits=7.318, diff = @.0
+x( 83) = 4.285714332402E-01  digits=7.395, diff = @.0
+x( 84) = 4.285714316090E-01  digits=7.759, diff = @.0
+x( 85) = 4.285714487453E-01  digits=6.591, diff = @.0
+x( 86) = 4.285714365667E-01  digits=6.870, diff = @.0
+x( 87) = 4.285714198164E-01  digits=6.798, diff = @.0
+x( 88) = 4.285714270920E-01  digits=7.017, diff = @.0
+x( 89) = 4.285714292933E-01  digits=7.143, diff = @.0
+x( 90) = 4.285714250513E-01  digits=7.334, diff = @.0
+x( 91) = 4.285714248629E-01  digits=7.298, diff = @.0
+x( 92) = 4.285714285678E-01  digits=7.155, diff = @.0
+x( 93) = 4.285714326577E-01  digits=7.437, diff = @.0
+x( 94) = 4.285714284703E-01  digits=7.700, diff = @.0
+x( 95) = 4.285714490712E-01  digits=6.799, diff = @.0
+x( 96) = 4.285714383651E-01  digits=7.104, diff = @.0
+x( 97) = 4.285714343500E-01  digits=7.225, diff = @.0
+x( 98) = 4.285714332937E-01  digits=7.750, diff = @.0
+x( 99) = 4.285714351764E-01  digits=7.445, diff = @.0
+x(100) = 4.285714303965E-01  digits=7.467, diff = @.0
+--------------------------------------------------------------------------------
+Noisefloat detected source(s):
+There are 490 numerical instabilities
+276 LOSS(ES) OF ACCURACY DUE TO CANCELLATION(S)
+60 UNSTABLE INTRINSIC FUNCTION(S)
+77 UNSTABLE BRANCHING(S)
+77 UNSTABLE DIVISION(S)
+
+CADNA C reference:
+There are 480 numerical instabilities
+76 UNSTABLE DIVISION(S)
+77 UNSTABLE BRANCHING(S)
+54 UNSTABLE INTRINSIC FUNCTION(S)
+273 LOSS(ES) OF ACCURACY DUE TO CANCELLATION(S)
+Comparison by source:
+  UNSTABLE DIVISION(S): noisefloat=77, reference=76
+  UNSTABLE BRANCHING(S): noisefloat=77, reference=77
+  UNSTABLE INTRINSIC FUNCTION(S): noisefloat=60, reference=54
+  LOSS(ES) OF ACCURACY DUE TO CANCELLATION(S): noisefloat=276, reference=273
+Reference source: newton_cad.cc / output.txt
+
+Runtime (mean seconds): deterministic_double=7.307282e-03, noisefloat=2.506872e+00, overhead=343.065x
+
+================================================================================
+Example 6: Gaussian elimination with partial pivoting
+Precision: double
+Backend: torch on cuda
+--------------------------------------------------------------------------------
+ll=0
+ll=1
+ll=3
+x_sol(1) = 9.999999999972E-01  digits=10.757  (true value: 1.0000000E+00)
+x_sol(2) = 1.000000000000E+00  digits=11.549  (true value: 1.0000000E+00)
+x_sol(3) = 1.000000000000E-08  digits=14.921  (true value: 1.0000000E-08)
+x_sol(4) = 1.000000000000E+00  digits=14.683  (true value: 1.0000000E+00)
+--------------------------------------------------------------------------------
+Noisefloat detected source(s):
+There are 1 numerical instabilities
+1 LOSS(ES) OF ACCURACY DUE TO CANCELLATION(S)
+
+CADNA C reference:
+There are 1 numerical instabilities
+1 LOSS(ES) OF ACCURACY DUE TO CANCELLATION(S)
+Comparison by source:
+  LOSS(ES) OF ACCURACY DUE TO CANCELLATION(S): noisefloat=1, reference=1
+Reference source: gauss_cad.cc / output.txt
+
+Runtime (mean seconds): deterministic_double=9.583637e-04, noisefloat=8.514255e-02, overhead=88.842x
+
+================================================================================
+Example 7: Jacobi iterative method
+Precision: double
+Backend: torch on cuda
+--------------------------------------------------------------------------------
+niter = 38  (verification cap: 1000)
+x_sol( 1) = 1.700027026250E+00  digits=11.332  (true value: 1.7000000E+00), residue( 1) = 1.815420963188E-04  digits=6.483
+x_sol( 2) = -4.746890045579E+03  digits=14.765  (true value: -4.7468900E+03), residue( 2) = -2.395129925693E-04  digits=6.789
+x_sol( 3) = 5.023004845584E+01  digits=12.618  (true value: 5.0230000E+01), residue( 3) = -1.790903185489E-04  digits=7.498
+x_sol( 4) = -2.453200229418E+02  digits=13.373  (true value: -2.4532000E+02), residue( 4) = 1.551808039342E-05  digits=5.290
+x_sol( 5) = 4.778290054426E+03  digits=14.664  (true value: 4.7782900E+03), residue( 5) = 3.383263974683E-04  digits=7.044
+x_sol( 6) = -7.572996292062E+01  digits=12.818  (true value: -7.5730000E+01), residue( 6) = -5.989009696350E-05  digits=5.837
+x_sol( 7) = 3.495429937241E+03  digits=14.643  (true value: 3.4954300E+03), residue( 7) = -2.694446000836E-04  digits=6.656
+x_sol( 8) = 4.349956566871E+00  digits=12.717  (true value: 4.3500000E+00), residue( 8) = 4.718363652501E-05  digits=6.177
+x_sol( 9) = 4.529800404808E+02  digits=13.742  (true value: 4.5298000E+02), residue( 9) = 1.514003412619E-04  digits=6.623
+x_sol(10) = -2.759971166938E+00  digits=12.009  (true value: -2.7600000E+00), residue(10) = -1.879665493713E-05  digits=5.661
+x_sol(11) = 8.239240004402E+03  digits=14.242  (true value: 8.2392400E+03), residue(11) = 2.180268438678E-05  digits=5.437
+x_sol(12) = 3.459997574349E+00  digits=11.875  (true value: 3.4600000E+00), residue(12) = 2.012074234396E-04  digits=7.045
+x_sol(13) = 1.000000005569E+03  digits=13.743  (true value: 1.0000000E+03), residue(13) = -1.694149247366E-04  digits=6.157
+x_sol(14) = -5.000039709649E+00  digits=11.791  (true value: -5.0000000E+00), residue(14) = -4.013317481319E-04  digits=6.866
+x_sol(15) = 3.642399960765E+03  digits=15.000  (true value: 3.6424000E+03), residue(15) = -9.847424007603E-05  digits=6.425
+x_sol(16) = 7.353598482576E+02  digits=13.757  (true value: 7.3536000E+02), residue(16) = -3.458089490778E-04  digits=6.682
+x_sol(17) = 1.700138887652E+00  digits=11.367  (true value: 1.7000000E+00), residue(17) = 3.456271212296E-04  digits=6.693
+x_sol(18) = -2.349169912823E+03  digits=14.394  (true value: -2.3491700E+03), residue(18) = 2.748551432887E-04  digits=6.638
+x_sol(19) = -8.247519966250E+03  digits=14.410  (true value: -8.2475200E+03), residue(19) = 2.118008398308E-04  digits=6.091
+x_sol(20) = 9.843569954129E+03  digits=15.000  (true value: 9.8435700E+03), residue(20) = -2.408247552618E-04  digits=6.113
+--------------------------------------------------------------------------------
+Noisefloat detected source(s):
+There are 335 numerical instabilities
+335 LOSS(ES) OF ACCURACY DUE TO CANCELLATION(S)
+
+CADNA C reference:
+There are 406 numerical instabilities
+406 LOSS(ES) OF ACCURACY DUE TO CANCELLATION(S)
+Comparison by source:
+  LOSS(ES) OF ACCURACY DUE TO CANCELLATION(S): noisefloat=335, reference=406
+Reference source: jacobi_cad.cc / output.txt
+
+Runtime (mean seconds): deterministic_double=2.425171e-01, noisefloat=3.582823e+01, overhead=147.735x
+
+================================================================================
+Compact noisefloat summary
+[single] Example 1: total=1 by_kind=LOSS(ES) OF ACCURACY DUE TO CANCELLATION(S)=1 | CADNA reference total=1 by_kind=LOSS(ES) OF ACCURACY DUE TO CANCELLATION(S)=1
+[single] Example 2: total=1 by_kind=LOSS(ES) OF ACCURACY DUE TO CANCELLATION(S)=1 | CADNA reference total=1 by_kind=LOSS(ES) OF ACCURACY DUE TO CANCELLATION(S)=1
+[single] Example 3: total=48 by_kind=UNSTABLE DIVISION(S)=4; UNSTABLE MULTIPLICATION(S)=44 | CADNA reference total=48 by_kind=UNSTABLE DIVISION(S)=4; UNSTABLE MULTIPLICATION(S)=44
+[single] Example 4: total=10 by_kind=UNSTABLE DIVISION(S)=8; UNSTABLE MULTIPLICATION(S)=2 | CADNA reference total=7 by_kind=UNSTABLE DIVISION(S)=5; UNSTABLE MULTIPLICATION(S)=2
+[single] Example 5: total=342 by_kind=UNSTABLE DIVISION(S)=90; UNSTABLE BRANCHING(S)=90; UNSTABLE INTRINSIC FUNCTION(S)=68; LOSS(ES) OF ACCURACY DUE TO CANCELLATION(S)=94 | CADNA reference total=336 by_kind=UNSTABLE DIVISION(S)=91; UNSTABLE BRANCHING(S)=89; UNSTABLE INTRINSIC FUNCTION(S)=60; LOSS(ES) OF ACCURACY DUE TO CANCELLATION(S)=96
+[single] Example 6: total=1 by_kind=LOSS(ES) OF ACCURACY DUE TO CANCELLATION(S)=1 | CADNA reference total=2 by_kind=UNSTABLE BRANCHING(S)=1; LOSS(ES) OF ACCURACY DUE TO CANCELLATION(S)=1
+[single] Example 7: total=318 by_kind=LOSS(ES) OF ACCURACY DUE TO CANCELLATION(S)=318 | CADNA reference total=376 by_kind=UNSTABLE BRANCHING(S)=111; UNSTABLE INTRINSIC FUNCTION(S)=35; LOSS(ES) OF ACCURACY DUE TO CANCELLATION(S)=230
+[double] Example 1: total=2 by_kind=LOSS(ES) OF ACCURACY DUE TO CANCELLATION(S)=2 | CADNA reference total=2 by_kind=LOSS(ES) OF ACCURACY DUE TO CANCELLATION(S)=2
+[double] Example 2: total=1 by_kind=LOSS(ES) OF ACCURACY DUE TO CANCELLATION(S)=1 | CADNA reference total=1 by_kind=LOSS(ES) OF ACCURACY DUE TO CANCELLATION(S)=1
+[double] Example 3: total=0 by_kind=none | CADNA reference total=0 by_kind=none
+[double] Example 4: total=9 by_kind=UNSTABLE DIVISION(S)=7; UNSTABLE MULTIPLICATION(S)=2 | CADNA reference total=8 by_kind=UNSTABLE DIVISION(S)=6; UNSTABLE MULTIPLICATION(S)=2
+[double] Example 5: total=490 by_kind=UNSTABLE DIVISION(S)=77; UNSTABLE BRANCHING(S)=77; UNSTABLE INTRINSIC FUNCTION(S)=60; LOSS(ES) OF ACCURACY DUE TO CANCELLATION(S)=276 | CADNA reference total=480 by_kind=UNSTABLE DIVISION(S)=76; UNSTABLE BRANCHING(S)=77; UNSTABLE INTRINSIC FUNCTION(S)=54; LOSS(ES) OF ACCURACY DUE TO CANCELLATION(S)=273
+[double] Example 6: total=1 by_kind=LOSS(ES) OF ACCURACY DUE TO CANCELLATION(S)=1 | CADNA reference total=1 by_kind=LOSS(ES) OF ACCURACY DUE TO CANCELLATION(S)=1
+[double] Example 7: total=335 by_kind=LOSS(ES) OF ACCURACY DUE TO CANCELLATION(S)=335 | CADNA reference total=406 by_kind=LOSS(ES) OF ACCURACY DUE TO CANCELLATION(S)=406
+Wrote summary CSV to: outputs/cadna_examples_1_7_torch/cadna_examples_1_7_summary.csv

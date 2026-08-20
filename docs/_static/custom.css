@@ -1,0 +1,27 @@
+/* Clean, minimal visual rhythm inspired by modern Japanese editorial layouts. */
+
+:root {
+  --jp-border-radius: 6px;
+}
+
+.sidebar-brand-text {
+  font-weight: 600;
+  letter-spacing: 0.015em;
+}
+
+.content {
+  line-height: 1.75;
+}
+
+.content h1,
+.content h2,
+.content h3 {
+  letter-spacing: 0.01em;
+  font-weight: 620;
+}
+
+div.admonition,
+code.literal,
+.highlight pre {
+  border-radius: var(--jp-border-radius);
+}
