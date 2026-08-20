@@ -1,0 +1,65 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "noisefloat"
+version = "0.1.0"
+description = "NFloat/CESTAC-style stochastic arithmetic with native array backends"
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [{ name = "Xinye Chen", email = "xinyechenai@gmail.com" }]
+requires-python = ">=3.9"
+dependencies = ["numpy>=1.22"]
+keywords = ["stochastic-arithmetic", "numerical-analysis", "floating-point", "cestac", "nfloat"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Mathematics",
+]
+
+[project.urls]
+Homepage = "https://github.com/chenxinye/noisefloat2"
+Repository = "https://github.com/chenxinye/noisefloat2"
+Issues = "https://github.com/chenxinye/noisefloat2/issues"
+
+[project.optional-dependencies]
+torch = ["torch>=2.0"]
+jax = ["jax>=0.4", "jaxlib>=0.4"]
+tensorflow = ["tensorflow>=2.12"]
+scipy = ["scipy>=1.9"]
+dev = [
+    "pytest>=7",
+    "pytest-cov",
+    "scipy>=1.9",
+    "sacrebleu>=2.4",
+    "black",
+    "ruff",
+]
+experiments = [
+    "matplotlib>=3.8",
+    "torchvision>=0.15",
+    "datasets>=2.20",
+    "sacrebleu>=2.4",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v"
+
+[tool.black]
+line-length = 88
+
+[tool.ruff]
+line-length = 88
