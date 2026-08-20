@@ -1,0 +1,17 @@
+suite,precision,expected_behavior,category,kernel,variant,input_label,avg_digits,min_digits,max_digits,mean_abs,std_mean,num_elements,is_stable,notes
+operator_level_cestac_kernels,exp8_sig23,stable,softmax,stable_logsumexp,,,6.908487538736167,6.7576786715444745,7.059296405927859,1002.7616984049479,5.285799583645256e-05,2,True,Shifted logsumexp avoids overflow.
+operator_level_cestac_kernels,exp8_sig23,unstable,softmax,naive_logsumexp_overflow,,,0.0,0.0,0.0,inf,nan,2,False,Naive exp-sum-log overflows for large logits.
+operator_level_cestac_kernels,exp8_sig23,stable,softmax,stable_softmax_shifted,,,7.558014582716156,6.094699725777717,15.0,0.2500000014745941,1.9243696572515352e-08,8,True,Shifted softmax on moderate logits.
+operator_level_cestac_kernels,exp8_sig23,unstable,softmax,naive_softmax_overflow,,,0.0,0.0,0.0,nan,nan,8,False,Naive softmax overflows for large logits.
+operator_level_cestac_kernels,exp8_sig23,stable,normalization,layernorm_normal_variance,,,7.704210522909454,5.248340911404376,15.0,0.8280499558935237,4.9799249917015827e-08,512,True,LayerNorm on ordinary activations.
+operator_level_cestac_kernels,exp8_sig23,unstable,normalization,layernorm_near_constant,,,0.8967597175972422,0.0,2.9489427097438052,0.5489587259547383,0.028236733681505814,512,False,LayerNorm with near-zero variance activations.
+operator_level_cestac_kernels,exp8_sig23,stable,attention,attention_separated_logits,,,8.667353333753471,5.866054672060748,15.0,0.37050344282761216,8.916439992692415e-09,4,True,Attention with clearly separated logits.
+operator_level_cestac_kernels,exp8_sig23,unstable,attention,attention_near_tie_logits,,,0.0,0.0,0.0,4.517509052022935e-21,1.7053026335868767e-13,4,False,Attention with nearly tied logits and opposing values.
+operator_level_cestac_kernels,exp11_sig52,stable,softmax,stable_logsumexp,,,15.0,15.0,15.0,1002.7616779455931,1.0981305266444317e-13,2,True,Shifted logsumexp avoids overflow.
+operator_level_cestac_kernels,exp11_sig52,unstable,softmax,naive_logsumexp_overflow,,,0.0,0.0,0.0,inf,nan,2,False,Naive exp-sum-log overflows for large logits.
+operator_level_cestac_kernels,exp11_sig52,stable,softmax,stable_softmax_shifted,,,14.973439838463147,14.787518707705168,15.0,0.25000000000000006,3.4354715474304044e-17,8,True,Shifted softmax on moderate logits.
+operator_level_cestac_kernels,exp11_sig52,unstable,softmax,naive_softmax_overflow,,,0.0,0.0,0.0,nan,nan,8,False,Naive softmax overflows for large logits.
+operator_level_cestac_kernels,exp11_sig52,stable,normalization,layernorm_normal_variance,,,14.988405077068254,13.954121673079573,15.0,0.8280499564935927,1.1044301074438409e-16,512,True,LayerNorm on ordinary activations.
+operator_level_cestac_kernels,exp11_sig52,unstable,normalization,layernorm_near_constant,,,9.716791871943403,7.598239186305216,11.338227982525721,0.5481656548899605,5.263633086311048e-11,512,True,LayerNorm with near-zero variance activations.
+operator_level_cestac_kernels,exp11_sig52,stable,attention,attention_separated_logits,,,14.889245333982869,14.556981335931477,15.0,0.3705034475094771,1.1883616595535505e-17,4,True,Attention with clearly separated logits.
+operator_level_cestac_kernels,exp11_sig52,unstable,attention,attention_near_tie_logits,,,0.0,0.0,0.0,8.414516322357459e-30,1.7053025658242404e-13,4,False,Attention with nearly tied logits and opposing values.
