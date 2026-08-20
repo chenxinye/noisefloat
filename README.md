@@ -34,7 +34,7 @@ quantisation rather than hardware rounding-mode switches:
 
 ```bash
 pip install numpy                     # required
-pip install noisefloat                # from PyPI (once published)
+pip install noisefloat                # from PyPI
 
 # or editable install from source (the repo is named "noisyfloat"):
 git clone https://github.com/chenxinye/noisyfloat.git
