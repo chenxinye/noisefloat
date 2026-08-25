@@ -1,7 +1,8 @@
 # noisefloat
 
-[![PyPI Downloads](https://img.shields.io/pypi/dw/noisefloat?style=flat&logo=pypi&logoColor=white)](https://pypi.org/project/noisefloat/)
-[![PyPI Downloads](https://img.shields.io/pypi/dm/noisefloat?style=flat-square&logo=pypi&logoColor=white)](https://pypi.org/project/noisefloat/)
+[![!pypi](https://img.shields.io/pypi/v/noisefloat?color=greem)](https://pypi.org/project/noisefloat/) 
+[![Downloads](https://static.pepy.tech/personalized-badge/noisefloat?period=month&units=international_system&left_color=grey&right_color=blue&left_text=Downloads)](https://pepy.tech/projects/noisefloat)
+
 
 **Stochastic arithmetic for Python** with native NumPy, PyTorch, JAX, and TensorFlow backends.
 
