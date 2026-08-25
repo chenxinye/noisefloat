@@ -1,5 +1,8 @@
 # noisefloat
 
+[![Download Status](https://static.pepy.tech/badge/noisefloat)](https://pypi.python.org/pypi/noisefloat/)
+
+
 **Stochastic arithmetic for Python** with native NumPy, PyTorch, JAX, and TensorFlow backends.
 
 ---
