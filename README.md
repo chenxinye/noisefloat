@@ -4,7 +4,7 @@
 [![Downloads](https://static.pepy.tech/personalized-badge/noisefloat?period=month&units=international_system&left_color=grey&right_color=blue&left_text=Downloads)](https://pepy.tech/projects/noisefloat)
 
 
-**Stochastic arithmetic for Python** with native NumPy, PyTorch, JAX, and TensorFlow backends.
+**Stochastic arithmetic with arbtrary precision for Python** with native NumPy, PyTorch, JAX, and TensorFlow backends.
 
 ---
 
